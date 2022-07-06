@@ -233,6 +233,7 @@ logo on the right. The Tailwind classes I’m using do a pretty good job of repr
   </div>
 </div>
 ```
+
 ![](../img/2.png)
 
 We’ve added `classes` here. The outer div now has two Tailwind classes: `flex justify-center`. The image has another two classes, `mx-4 order-last`, and the text block
@@ -242,3 +243,91 @@ we’ll look at later in `Flexbox`, on page 48.
 
 Now, let’s go after that text. Let’s make the `header` big, the `subhead` less big,
 and all the lines `centered`. And let’s give the whole thing a background:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TailwindCode</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../css/output.css" />
+  </head>
+
+  <body>
+    <!-- <h1>Welcome to NorthBy</h1> -->
+    <div class="flex justify-center bg-gray-300">
+      <div class="mx-4 order-last">
+        <img src="../media/music.svg" size="100*100" alt="" />
+      </div>
+      <div class="mx-4 self-center text-center">
+        <h1 class="text-6xl font-bold text-blue-700">Welcome to NorthBy</h1>
+        <h2 class="text-3xl font-semibold text-blue-300">
+          A premium in sight and sound
+        </h2>
+        <button>Learn More</button>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+This adds a new class to the outer div, `bg-gray-300`, which specifies a background
+`color`. We’ve added a bunch of classes to the text elements, including a `textcenter` class surrounding them. The title element is now marked with `text-6xl`
+`font-bold` `text-blue-700`, which specifies `text` `size`, `font` `weight`, and `color`. The subhead is smaller, less bold, and a lighter shade of blue: `text-3xl` `font-semibold` `textblue-300`.
+
+![](../img/3.png)
+
+Next, let’s make the `button` look more like a button, realign the image, and
+while we’re at it, make the `image` `rounder`, too:
+
+````html
+<button
+  class="my-4 px-4 py-2 border-2 border-black rounded-lg text-white bg-blue-900"
+>
+  Learn More
+</button>
+```
+````
+
+The image tag now has a class of `rounded-full`, which makes the whole thing
+appear in a `circle` (admittedly quite a subtle effect on this image). The `button`
+has grown a lot of `classes`: `my-4` `px-4` `py-2` specifies a vertical margin and horizontal and vertical padding; `border-2 border-black rounded-lg` specifies the `size`, `color`,
+and `shape` of the `border`; and `text-white bg-blue-900` gives us the `text` and `background colors`:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TailwindCode</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../css/output.css" />
+  </head>
+
+  <body>
+    <!-- <h1>Welcome to NorthBy</h1> -->
+    <div class="flex justify-center bg-gray-300">
+      <div class="mx-4 order-last self-center">
+        <img
+          src="../media/music.svg"
+          size="100*100"
+          alt=""
+          class="rounded-full"
+        />
+      </div>
+      <div class="mx-4 self-center text-center">
+        <h1 class="text-6xl font-bold text-blue-700">Welcome to NorthBy</h1>
+        <h2 class="text-3xl font-semibold text-blue-300">
+          A premium in sight and sound
+        </h2>
+        <button
+          class="my-4 px-4 py-2 border-2 border-black rounded-lg text-white bg-blue-900"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+![](./../img/4.png)
